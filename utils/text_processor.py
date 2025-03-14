@@ -4,21 +4,10 @@ import random
 from ..config import LINE_BREAK_TOKEN, PUNCTUATION_MARKS
 
 class TextProcessor:
-    """
-    Class for processing and cleaning text for the Markov model
-    """
     
     @staticmethod
     def tokenize(text: str) -> List[str]:
-        """
-        Convert text to a list of tokens, preserving newlines and punctuation.
-        
-        Args:
-            text (str): Input text to tokenize
-            
-        Returns:
-            List[str]: List of tokens
-        """
+
         text = text.replace('\r\n', LINE_BREAK_TOKEN)
         
         text = text.replace(LINE_BREAK_TOKEN, f' {LINE_BREAK_TOKEN} ')
@@ -29,15 +18,7 @@ class TextProcessor:
     
     @staticmethod
     def clean_output(text: str) -> str:
-        """
-        Clean up the generated text for better presentation.
-        
-        Args:
-            text (str): Raw generated text
-            
-        Returns:
-            str: Cleaned and formatted text
-        """
+
         for mark in PUNCTUATION_MARKS:
             if mark in [')', '(']:
                 continue
@@ -61,15 +42,7 @@ class TextProcessor:
     
     @staticmethod
     def add_variety(text: str) -> str:
-        """
-        Add linguistic variety to the text, avoiding repetition.
-        
-        Args:
-            text (str): Input text
-            
-        Returns:
-            str: Text with improved variety
-        """
+
         lines = text.split(LINE_BREAK_TOKEN)
         processed_lines = []
         
