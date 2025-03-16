@@ -86,18 +86,7 @@ You can modify the `config.py` file to change default settings:
 - Generation parameters
 - Default paths and filenames
 
-## Testing
-
-Run the tests with:
-
-```bash
-python -m unittest discover tests
-```
 
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
